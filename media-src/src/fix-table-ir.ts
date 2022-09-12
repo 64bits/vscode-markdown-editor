@@ -91,7 +91,7 @@ export function fixTableIr() {
   </div>
   `
       $(tablePanel).on('click', '.vditor-icon', (e) => {
-        let type = $(e.target).attr('data-type')
+        const type = $(e.target).attr('data-type')
         const handleMap = {
           left: [
             '{ctrl}{shift}l{/shift}{/ctrl}',
@@ -124,7 +124,7 @@ export function fixTableIr() {
             '{meta}{shift}-{/shift}{/meta}',
           ], // 有的是+ 有的是=; -/_ 都是为了fix不同平 bug
         }
-        let k =
+        const k =
           handleMap[type][
             navigator.platform.toLowerCase().includes('mac') ? 1 : 0
           ]
@@ -148,7 +148,7 @@ export function fixTableIr() {
   eventRoot.addEventListener('click', (e) => {
     if (vditor.getCurrentMode() !== 'ir') return
     const tablePanel = insertTablePanel()
-    let clickEl = window.getSelection().anchorNode.parentElement
+    const clickEl = window.getSelection().anchorNode.parentElement
     if (['TD', 'TH', 'TR'].includes(clickEl.tagName)) {
       if (tablePanel.style.display !== 'block') {
         tablePanel.style.display = 'block'
@@ -166,7 +166,7 @@ export function fixTableIr() {
     }
   })
   // don't bubble keyboardEvent to vscode when trigger vditor table hot keys, prevent hotkey conflicts with vscode
-  let stopEvent = (e: KeyboardEvent) => {
+  const stopEvent = (e: KeyboardEvent) => {
     if (disableVscodeHotkeys) {
       e.preventDefault()
       e.stopPropagation()

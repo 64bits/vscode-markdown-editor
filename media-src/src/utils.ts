@@ -41,10 +41,10 @@ export function confirm(msg, onOk) {
 }
 // 切换 content-theme 时自动修改 vditor theme
 export function fixDarkTheme() {
-  let $ct = document.querySelector('[data-type="content-theme"]')
+  const $ct = document.querySelector('[data-type="content-theme"]')
   $ct.nextElementSibling.addEventListener('click', (e) => {
     if ((e.target as any).tagName !== 'BUTTON') return
-    let type = (e.target as any).getAttribute('data-type')
+    const type = (e.target as any).getAttribute('data-type')
     if (type === 'dark') {
       vditor.setTheme(type)
     } else {
@@ -62,7 +62,7 @@ export function fixPanelHover() {
         e.currentTarget.classList.add('vditor-panel_hover')
       })
       .on('mouseleave', (e) => {
-        let el = e.currentTarget
+        const el = e.currentTarget
         timer = setTimeout(() => {
           el.classList.remove('vditor-panel_hover')
         }, 2000)
@@ -82,7 +82,7 @@ export const fileToBase64 = async (file) => {
 }
 // 保存 vditor 配置到 vscode 同步存储
 export function saveVditorOptions() {
-  let vditorOptions = {
+  const vditorOptions = {
     theme: vditor.vditor.options.theme,
     mode: vditor.vditor.currentMode,
     preview: vditor.vditor.options.preview,
@@ -108,7 +108,7 @@ export function fixLinkClick() {
     vscode.postMessage({ command: 'open-link', href: url })
   }
   document.addEventListener('click', e=> {
-    let el = e.target as HTMLAnchorElement
+    const el = e.target as HTMLAnchorElement
     if (el.tagName === 'A') {
       openLink(el.href)
     }
@@ -127,7 +127,7 @@ export function fixLinkClick() {
 (anonymous) @ host.js:27
 see: https://github.com/nwjs/nw.js/issues/3403 */
 export function fixCut() {
-  let _exec = document.execCommand.bind(document)
+  const _exec = document.execCommand.bind(document)
   document.execCommand = (cmd, ...args) => {
     if (cmd === 'delete') {
       setTimeout(() => {

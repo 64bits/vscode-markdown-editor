@@ -18,6 +18,8 @@ body[data-use-vscode-theme-color="1"] .vditor {
 /* fix font family */
 .vditor .vditor-reset {
   font-family: var(--vscode-editor-font-family)!important;
+  font-size: var(--vscode-font-size, var(--theme-font-size));
+  color: var(--vscode-editor-foreground, var(--theme-foreground));
 }
 /* fix code block color in dark mode */
 .vditor--dark .vditor-reset code:not(.hljs):not(.highlight-chroma) {
@@ -70,4 +72,8 @@ body[data-use-vscode-theme-color="1"] .vditor {
 }
 .jconfirm-buttons button {
   text-transform: none!important;
+}
+/* additional styles to fix vscode view */
+.vditor-reset table th {
+  background:var(--vscode-checkbox-background);
 }

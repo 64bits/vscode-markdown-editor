@@ -17,7 +17,14 @@ export const toolbar = [
 		})
 	  },
 	},
-
+	{
+		hotkey: "⌘K",
+		icon: '<svg><use xlink:href="#vditor-icon-link"></use></svg>',
+		name: "link",
+		prefix: "[",
+		suffix: "]()",
+		tipPosition: "n",
+	},
 	'emoji',
 	'headings',
 	'bold',

@@ -31,8 +31,7 @@ function initVditor(msg) {
         theme: {
           current: 'dark',
         },
-      },
-      '_lutePath': 'https://www.csh.rit.edu/~rg/lute.min.js'
+      }
     })
   }
   defaultOptions = merge(defaultOptions, msg.options, {
@@ -53,6 +52,7 @@ function initVditor(msg) {
     lang,
     value: msg.content,
     mode: 'ir',
+    '_lutePath': 'https://www.csh.rit.edu/~rg/lute.min.js',
     cache: { enable: false },
     toolbar,
     toolbarConfig: { pin: true },

@@ -79,7 +79,7 @@ body[data-use-vscode-theme-color="1"] .vditor {
   background:var(--vscode-checkbox-background);
 }
 .vditor-reset blockquote {
-  color:#50565d !important;
+  color: var(--vscode-button-hoverBackground) !important;
   padding: 0.5em 1em !important;
-  margin: 0 !important;
+  margin: 0 0 5px !important;
 }

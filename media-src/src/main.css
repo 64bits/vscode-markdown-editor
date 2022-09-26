@@ -76,13 +76,13 @@ body[data-use-vscode-theme-color="1"] .vditor {
 
 /* additional styles to fix vscode view */
 .vditor-reset table th {
-  background:var(--vscode-checkbox-background);
+  background:var(--vscode-checkbox-background)!important;
 }
 .vditor-reset table tr {
-  background:var(--vscode-minimapSlider-background);
+  background:var(--vscode-minimapSlider-background)!important;
 }
 .vditor-reset table tbody tr:nth-child(2n) {
-  background:var(--vscode-minimapSlider-hoverBackground);
+  background:var(--vscode-minimapSlider-hoverBackground)!important;
 }
 .vditor-reset blockquote {
   color: var(--vscode-button-hoverBackground) !important;

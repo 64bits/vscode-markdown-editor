@@ -206,10 +206,10 @@ export class EditorPanel {
             let url = message.href
             if (!/^http/.test(url)) {
               url = NodePath.resolve(this._fsPath, '..', url)
-            }
-            if (!fs.existsSync(url)) {
-              // Add a markdown extension
-              url = `${url}.md`
+              if (!fs.existsSync(url)) {
+                // Add a markdown extension
+                url = `${url}.md`
+              }
             }
             vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url))
             break

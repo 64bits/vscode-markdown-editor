@@ -78,6 +78,12 @@ body[data-use-vscode-theme-color="1"] .vditor {
 .vditor-reset table th {
   background:var(--vscode-checkbox-background);
 }
+.vditor-reset table tr {
+  background:var(--vscode-minimapSlider-background);
+}
+.vditor-reset table tbody tr:nth-child(2n) {
+  background:var(--vscode-minimapSlider-hoverBackground);
+}
 .vditor-reset blockquote {
   color: var(--vscode-button-hoverBackground) !important;
   padding: 0.5em 1em !important;
